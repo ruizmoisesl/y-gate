@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" />
+    <style>
+        .icono-menu {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 30;
+
+        }
+
+        .icono-menu img {
+            vertical-align: top;
+            width: 40px;
+            cursor: pointer;
+            z-index: 30;
+        }
+
+        .active {
+            transform: translate(-600px);
+        }
+
+        .cont-menu ul {
+            padding: 100px 0px 20px 0px;
+            list-style: none;
+        }
+
+        .cont-menu ul li {
+            color: white;
+            display: block;
+            font-size: 25px;
+            text-decoration: none;
+            padding: 10px 50px;
+            cursor: pointer;
+        }
+
+        .cont-menu {
+            background-color: rgb(26, 25, 25);
+            box-shadow: 2px 0px 5px 2px rgb(51, 45, 32);
+            width: 350px;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: all .5s ease;
+        }
+
+        .active .carousel {
+            transform: scale(0.6);
+        }
+
+        body {
+            background: linear-gradient(to right, black, rgb(158, 103, 1));
+            background-size: cover;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .carousel-container {
+            width: 98%;
+            max-width: 2000px;
+            margin: 0 auto;
+            margin-top: 40px;
+        }
+
+        .carousel {
+            display: flex;
+            overflow: hidden;
+            position: relative;
+            top: 20%;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel img {
+            width: 150px;
+            height: 150px;
+            margin-right: 10px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .carousel img:hover {
+            transform: scale(1.1);
+        }
+
+        .carousel-prev,
+        .carousel-next,
+        .carousel-ade,
+        .carousel-atras {
+            font-size: 30px;
+            cursor: pointer;
+            color: rgb(0, 0, 0);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            position: absolute;
+            margin-top: 0%;
+            transform: translateY(-50%);
+        }
+
+        .carousel-prev {
+            left: 88%;
+            color: aliceblue;
+        }
+
+        .carousel-next {
+            right: 5%;
+            color: aliceblue;
+        }
+
+        h1 {
+            font-family: 'DM Serif Display', serif;
+            margin: 0;
+            padding: 0px;
+            margin-left: 70px;
+            margin-top: 10px;
+            color: aliceblue;
+        }
+
+        .buscador {
+            margin-top: -40px;
+            margin-left: 450px;
+            width: 800px;
+            padding: 5px;
+            align-self: flex-end;
+        }
+
+        h2 {
+            margin-left: 200px;
+            margin-top: 30px;
+        }
+
+        .cont-menu {
+            background-color: rgb(156, 117, 8);
+            box-shadow: 2px 0px 5px 2px rgba(104, 97, 3, 0.575);
+            width: 350px;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: all .5s ease;
+            z-index: 20;
+        }
+
+        .imgs {
+            width: 200px;
+            text-align: left;
+            margin-right: 10px;
+        }
+
+
+        .imgs img {
+            width: 250px;
+            height: 150px;
+            object-fit: cover;
+        }
+
+
+        .imgs p {
+            margin: 10px 0;
+            font-weight: bold;
+            color: white;
+        }
+
+        .carousel-ade {
+            left: 88%;
+            color: aliceblue;
+        }
+
+        .carousel-atras {
+            right: 5%;
+            color: aliceblue;
+        }
+
+
+
+
+        .car2 img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+        }
+
+
+        .carousel2-container {
+            width: auto;
+            max-width: 1200px;
+            margin: 0 auto;
+            margin-top: 30px;
+        }
+
+        .carousel-ade,
+        .carousel-atras {
+            margin-top: -30px;
+        }
+
+        h4 {
+            margin-top: 60px;
+            margin-left: 200px;
+        }
+    </style>
+    <title>Y'GATE</title>
+</head>
+
+<body>
+    <div>
+        <h1>Y'GATE</h1>
+    </div>
+    <div class="buscador">
+        <input type="text" placeholder="BUSCAR"
+            style=" border-bottom: 1px solid black; background: transparent; width: 60%; outline: none; font-size: 16px; color: black; padding: 5px 0; margin-bottom: 10px; border-radius: 15px; border-left: 1px solid black; border-right: 1px solid black;">
+    </div>
+    <h2 style="color: aliceblue;">Productos Populares</h2>
+    <div class="icono-menu">
+        <img src="{{menu}}" id="icono-menu">
+    </div>
+    <div class="cont-menu" id="menu">
+        <ul>
+            <li>iniciar sesión</li>
+            <li>registrarse</li>
+        </ul>
+    </div>
+
+    <div class="carousel-prev">🠐</div>
+    <div class="carousel-next">🠒</div>
+    <div class="carousel-container">
+        <div class="carousel">
+            <div class="imgs">
+                <img src="{{postre}}" alt="Imagen 1">
+                <p>POSTRE</p>
+                <p>10 MIN ⭐⭐⭐⭐</p>
+            </div>
+            <div class="imgs">
+                <img src="{{pan}}" alt="Imagen 2">
+                <p>PAN</p>
+                <p>5 MIN ⭐⭐⭐⭐⭐</p>
+            </div>
+            <div class="imgs">
+                <img src="{{hambur}}" alt="Imagen 3">
+                <p>HAMBURGUESA</p>
+                <P>15 MIN ⭐⭐⭐⭐⭐</P>
+            </div>
+            <div class="imgs">
+                <img src="{{grani}}" alt="Imagen 4">
+                <p>GRANIZADO</p>
+                <P>10 MIN ⭐⭐⭐⭐</P>
+            </div>
+            <div class="imgs">
+                <img src="{{gatos}}" alt="">
+                <p>MUEBLE PARA GATOS</p>
+                <P>20 MIN ⭐⭐⭐⭐⭐</P>
+            </div>
+            <div class="imgs">
+                <img src="{{ropa}}" alt="">
+                <p>ROPA</p>
+                <p>30 MIN ⭐⭐⭐⭐</p>
+            </div>
+        </div>
+    </div>
+    <div>
+
+        <h4 class="mercados">SUPER MERCADOS</h4>
+    </div>
+    <div class="carousel-ade">🠐</div>
+    <div class="carousel-atras">🠒</div>
+    <div class="carousel2-container">
+        <div class="carousel2">
+            <div class="car2">
+                <img src="{{exito}}" alt="exito">
+            </div>
+            <div class="car2">
+                <img src="{{caru}}" alt="">
+            </div>
+            <div class="car2">
+                <img src="{{colanta}}" alt="">
+            </div>
+            <div class="car2">
+                <img src="{{d1}}" alt="">
+            </div>
+            <div class="car2">
+                <img src="{{olimpica}}" alt="">
+            </div>
+            <div class="car2">
+                <img src="{{jumbo}}" alt="">
+            </div>
+            <div class="car2">
+                <img src="{{ara}}" alt="">
+            </div>
+            <div class="car2">
+                <img src="{{user}}" alt="">
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        let estadoMenu = "desactivado";
+        const iconoMenu = document.querySelector('#icono-menu');
+        const menu = document.querySelector('#menu');
+
+        iconoMenu.addEventListener('click', (e) => {
+            if (estadoMenu === "desactivado") {
+                estadoMenu = "activado";
+                iconoMenu.setAttribute('src', '{{ menu }}');
+            } else {
+                estadoMenu = "desactivado";
+                iconoMenu.setAttribute('src', '{{menu}}');
+            }
+
+            menu.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+        });
+
+
+        $(document).ready(function () {
+            $('.carousel').slick({
+                slidesToShow: 5,
+                slidesToScroll: 1,
+                autoplay: false,
+                prevArrow: $('.carousel-prev'),
+                nextArrow: $('.carousel-next'),
+            });
+        });
+        $(document).ready(function () {
+            $('.carousel2').slick({
+                slidesToShow: 7,
+                slidesToScroll: 1,
+                autoplay: false,
+                prevArrow: $('.carousel-ade'),
+                nextArrow: $('.carousel-atras'),
+            });
+        });
+    </script>
+</body>
+
+</html>

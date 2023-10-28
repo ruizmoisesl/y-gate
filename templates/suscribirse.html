@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/Y'GATE logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="css/suscribirse.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <title>Suscribirse</title>
+</head>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    * {
+        font-family: 'Nanum Gothic', sans-serif;
+    }
+
+
+    body {
+        background-color: black;
+    }
+
+
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.884);
+        height: 67px;
+        width: 100%;
+    }
+
+    .ygate {
+        margin-top: -55px;
+        margin-left: 65px;
+        font-size: 35px;
+        color: white;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+    }
+
+
+    .accesos {
+        display: flex;
+        margin-left: 55px;
+        margin-top: -50px;
+        justify-content: center;
+
+
+    }
+
+    .accesos-items {
+        margin: 10px;
+        color: white;
+        text-decoration: none;
+        text-align: right;
+        margin-top: -2px;
+    }
+
+
+    .inicio_suscripcion {
+        display: flex;
+        margin-left: 55px;
+        margin-top: -55px;
+        justify-content: right;
+    }
+
+    .inicio {
+        margin: 10px;
+        color: white;
+        text-decoration: none;
+        text-align: right;
+        font-size: 15px;
+        padding: 10px;
+        border-radius: 20px;
+    }
+
+    .registro {
+        margin-top: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+
+    .cliente {
+        text-align: center;
+        text-decoration: none;
+        color: black;
+        background-color: white;
+        border-radius: 20px;
+        padding: 10px;
+        font-size: 50px;
+        margin-top: 50px;
+    }
+
+    .cliente:hover {
+        border: 5px solid yellow;
+        background-color: rgba(255, 255, 0, 0.466);
+    }
+
+    .empresa:hover {
+        border: 5px solid yellow;
+        background-color: white;
+    }
+
+    .o {
+        margin-top: 25px;
+        font-size: 50px;
+    }
+
+    .empresa {
+        text-align: center;
+        text-decoration: none;
+        color: black;
+        background-color: yellow;
+        border-radius: 20px;
+        padding: 10px;
+        font-size: 50px;
+        margin-top: 25px;
+        border-bottom: 10px;
+    }
+
+    .img{
+        display: flex;
+        height: 90%;
+        width: 50%;
+        margin: 10px;
+    }
+</style>
+
+<header>
+    <a href="/" class="img"> <img src="{{logo_imag}}" alt="" srcset=""> </a>
+    <h1 class="ygate">Y'GATE</h1>
+
+    <div class="accesos">
+        <a href="/" class="accesos-items">INICIO</a>
+        <a href="" class="accesos-items">TIENDAS</a>
+        <a href="" class="accesos-items">PRODUCTOS</a>
+        <a href="" class="accesos-items">MERCADOS</a>
+
+    </div>
+
+    <div class="inicio_suscripcion">
+        <a href="/iniciar_sesion" class="inicio">INICIAR SESION</a>
+    </div>
+</header>
+
+<body>
+    <div class="registro">
+        <h1>¿COMO TE QUIERES REGISTRAR?</h1>
+
+        <a href="/registro_cliente" class="cliente">COMO CLIENTE</a>
+        <h1 class="o">O</h1>
+        <a href="/registro_empresa" class="empresa">COMO EMPRESA</a>
+    </div>
+</body>
+
+</html>

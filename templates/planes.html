@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/planes.css">
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <title>Planes</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    * {
+        margin: 0;
+        font-family: 'Nanum Gothic', sans-serif;
+
+    }
+
+    body {
+        background: black;
+    }
+
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.884);
+        height: 67px;
+        width: 100%;
+    }
+
+    .ygate {
+        margin-top: -55px;
+        margin-left: 65px;
+        font-size: 35px;
+        color: white;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+    }
+
+    .accesos {
+        display: flex;
+        margin-left: 55px;
+        margin-top: -30px;
+        justify-content: center;
+
+
+    }
+
+    .img{
+        display: flex;
+        height: 90%;
+        width: 50%;
+        margin: 10px;
+    }
+
+    .accesos-items {
+        margin: 10px;
+        color: white;
+        text-decoration: none;
+        text-align: right;
+        margin-top: -2px;
+    }
+
+    .inicio_suscripcion {
+        display: flex;
+        margin-left: 55px;
+        margin-top: -50px;
+        justify-content: right;
+    }
+
+    .inicio{
+        margin: 10px;
+        color: white;
+        text-decoration: none;
+        text-align: right;
+        font-size: 15px;
+        padding: 10px;
+        border-radius: 20px ;
+    }
+    
+    .logout{
+        margin: 10px;
+        background-color: yellow;
+        text-decoration: none;
+        text-align: right;
+        font-size: 15px;
+        padding: 10px;
+        border-radius: 20px ;
+    }
+    
+
+    .suscripcion {
+        margin: 10px;
+        color: black;
+        text-decoration: none;
+        text-align: center;
+        font-size: 13px;
+        background-color: yellow;
+        padding: 10px;
+        border-radius: 20px;
+    }
+
+    .plan {
+        margin-top: 100px;
+        color: white;
+    }
+
+    .desc {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .coment {
+        margin-top: 10px;
+        display: flex;
+        text-align: center;
+        width: 560px;
+        color: gray;
+    }
+
+    .planes {
+        margin-top: 100px;
+        display: flex;
+        justify-content: space-between;
+        color: white;
+
+    }
+
+    span {
+        display: flex;
+        flex-direction: column;
+        background-color: gray;
+        width: 2px;
+        height: 310px;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    .mes {
+        margin-top: -50px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .btn1 {
+        text-align: center;
+        position: relative;
+        border-radius: 20px;
+        height: 40px;
+        width: 220px;
+        background-color: yellow;
+        border: none;
+        padding: 5px;
+    }
+
+    .tipo1 {
+        margin-top: 45px;
+        margin-bottom: 10px;
+        display: flex;
+        margin-left: -100px;
+        justify-content: left;
+    }
+
+    .precio1 {
+        display: flex;
+        margin-left: -70px;
+        color: yellow;
+    }
+
+    .ul1 {
+        margin-top: 30px;
+    }
+
+    .semestre {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn2 {
+        text-align: center;
+        border-radius: 20px;
+        height: 40px;
+        width: 220px;
+        background-color: yellow;
+        border: none;
+        padding: 5px;
+    }
+
+    button:hover {
+        cursor: pointer;
+        width: 225px;
+        height: 50px;
+    }
+
+
+    .tipo2 {
+        margin-bottom: 10px;
+        display: flex;
+        margin-left: -100px;
+        justify-content: left;
+    }
+
+    .precio2 {
+        display: flex;
+        margin-left: -120px;
+        color: yellow;
+    }
+
+    .año {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .tipo3 {
+        margin-top: 8px;
+        margin-bottom: 10px;
+        display: flex;
+        margin-left: -340px;
+        justify-content: left;
+    }
+
+    .precio3 {
+        display: flex;
+        margin-left: -310px;
+        color: yellow;
+    }
+
+    .ul3 {
+        margin-top: 15px;
+    }
+
+    .btn3 {
+        text-align: center;
+        border-radius: 20px;
+        height: 40px;
+        width: 220px;
+        background-color: yellow;
+        border: none;
+        padding: 5px;
+    }
+
+    li {
+        color: gray;
+        margin-bottom: 10px;
+    }
+
+
+    .btn1,
+    .btn2,
+    .btn3 {
+        margin-top: auto;
+    }
+</style>
+<header>
+    <a href="/" class="img"> <img src="{{logo_imag}}" alt="" srcset=""> </a>
+    <h1 class="ygate">Y'GATE</h1>
+
+    <div class="accesos">
+        <a href="/" class="accesos-items">INICIO</a>
+        <a href="" class="accesos-items">TIENDAS</a>
+        <a href="" class="accesos-items">PRODUCTOS</a>
+        <a href="" class="accesos-items">MERCADOS</a>
+
+    </div>
+
+    <div class="inicio_suscripcion">
+        <form action="/cerrar_sesion" method="POST">
+            <input class="logout" type="submit" value="Cerrar Sesión">
+        </form>
+    </div>
+
+</header>
+
+<body>
+    <section class="plan">
+        <div class="desc">
+            <h1>PLANES</h1>
+            <p class="coment">EN Y'GATE TE OFRECEMOS LOS MEJORES PLANES PARA QUE TOMES EL QUE MAS TE GUSTE Y PUEDAS
+                EMPRENDER CON POCO DINERO.</p>
+        </div>
+
+    </section>
+
+    <section class="planes">
+        <div class="mes">
+            <h3 class="tipo1">MES</h3>
+            <h4 class="precio1">30.000 $</h4>
+            <ul class="ul1">
+                <li>LOCAL VIRTUAL</li>
+                <li>PUBLICAR FOTOS</li>
+                <li>PUBLICAR TUS VIDEOS</li>
+            </ul>
+
+            <button class="btn1">
+                <h4>SELECCIONAR PLAN</h4>
+                <a href="/add_producto"></a>
+            </button>
+        </div>
+
+        <span></span>
+
+        <div class="semestre">
+            <h3 class="tipo2">SEMESTRE</h3>
+            <h4 class="precio2">150.000 $</h4>
+            <ul class="ul2">
+                <li>TODO EL PLAN BASICO</li>
+                <li>0 COMISIONES</li>
+                <li>ATENCION PERSONALIZADA</li>
+                <li>CUENTAS CLARAS</li>
+                <li>DESTACA TU CONTENIDO</li>
+                <li>ACCESO ILIMITADO</li>
+                <li>OFERTAS Y DESCUENTOS</li>
+            </ul>
+
+            <button class="btn2">
+                <h4>SELECCIONAR PLAN</h4>
+            </button>
+        </div>
+
+        <span></span>
+
+        <div class="año">
+            <h3 class="tipo3">AÑO</h3>
+            <h4 class="precio3">300.000 $</h4>
+            <ul class="ul3">
+                <li>TODAS LAS CARACTERISTICAS DE LOS PLANES ANTERIORES ADEMAS DE LAS CARACTERISTICAS PERSONALIZADAS QUE
+                    NECESITES.</li>
+                <li>ASESORIAS PERSONALIZADAS PARA POTENCIAR TU NEGOCIO Y TENERLO AL DIA</li>
+            </ul>
+
+            <button class="btn3">
+                <h4>SELECCIONAR PLAN</h4>
+            </button>
+        </div>
+    </section>
+
+</body>
+
+</html>

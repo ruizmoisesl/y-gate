@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/cliente.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Registro cliente</title>
+</head>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    * {
+        font-family: 'Nanum Gothic', sans-serif;
+    }
+
+    body {
+        background: black;
+    }
+
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.884);
+        height: 67px;
+        width: 100%;
+    }
+
+    .ygate {
+        margin-top: -55px;
+        margin-left: 65px;
+        font-size: 35px;
+        color: white;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+    }
+
+    .accesos {
+        display: flex;
+        margin-left: 55px;
+        margin-top: -30px;
+        justify-content: center;
+
+
+    }
+
+    .accesos-items {
+        margin: 10px;
+        color: white;
+        text-decoration: none;
+        text-align: right;
+        margin-top: -2px;
+    }
+
+    .inicio_suscripcion {
+        display: flex;
+        margin-left: 55px;
+        margin-top: -50px;
+        justify-content: right;
+    }
+
+    .inicio {
+        margin: 10px;
+        color: white;
+        text-decoration: none;
+        text-align: right;
+        font-size: 15px;
+        padding: 10px;
+        border-radius: 20px;
+    }
+
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: solid yellow 5px;
+        border-radius: 25px;
+        padding: 50px;
+    }
+
+    .regsitro-cliente {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 90px;
+        color: white;
+    }
+
+
+    button {
+        margin-top: 20px;
+        border-radius: 20px;
+        padding: 10px;
+        background-color: yellow;
+        border: none;
+    }
+
+    button:hover {
+        cursor: pointer;
+        width: 70px;
+        padding: 5px;
+    }
+
+    label {
+        margin-top: 10px;
+    }
+
+    h1 {
+        margin-top: -25px;
+    }
+
+    .img{
+        display: flex;
+        height: 90%;
+        width: 50%;
+        margin: 10px;
+    }
+
+    input {
+        background: none;
+        outline: none;
+        border: none;
+        border-radius: 2px;
+        border-bottom: 4px solid yellow;
+        color: white;
+        margin-top: 10px;
+        width: 100%;
+        text-align: center;
+    }
+</style>
+<header>
+    <a href="principal.html" class="img"> <img src="img/Y'GATE logo.jpg" alt="" srcset=""> </a>
+    <h1 class="ygate">Y'GATE</h1>
+
+    <div class="accesos">
+        <a href="/" class="accesos-items">INICIO</a>
+        <a href="" class="accesos-items">TIENDAS</a>
+        <a href="" class="accesos-items">PRODUCTOS</a>
+        <a href="" class="accesos-items">MERCADOS</a>
+
+    </div>
+
+    <div class="inicio_suscripcion">
+        <a href="iniciar_sesion.html" class="inicio">INICIAR SESION</a>
+    </div>
+</header>
+
+<body>
+    <div class="regsitro-cliente">
+        <form action="/registrop" method="post">
+            <h1>CLIENTE</h1>
+            <label for="">NOMBRE COMPLETO</label>
+            <input type="text" name="name" autocomplete="off">
+            <label for="">NOMBRE DE USUARIO</label>
+            <input type="text" name="nameuser">
+            <label for="">CONTRASEÑA</label>
+            <input type="password" name="password">
+            <label for="">REPETIR CONTRASEÑA</label>
+            <input type="password" name="passwordr">
+            <button type="submit">Registrate</button>
+        </form>
+
+    </div>
+    <script>
+
+        function login() {
+            let nombre = document.getElementById("name").value;
+            let nombreuser = document.getElementById("nameuser").value;
+            let contraseña = document.getElementById("password").value;
+            let contraseñar = document.getElementById("passwordr").value;
+
+            let localnombre = localStorage.setItem("Nombre Completo:", nombre)
+            let localuser = localStorage.setItem("Nombre De Usuario:", nombreuser)
+            let localcontra = localStorage.setItem("contraseña:", contraseña)
+            let localcontrar = localStorage.setItem("contraseña repetida:", contraseñar)
+
+            let nombredls = localStorage.getItem("Nombre Completo:")
+            let userdls = localStorage.getItem("Nombre De Usuario:")
+            let contradls = localStorage.getItem("contraseña:")
+            let contrardls = localStorage.getItem("contraseña repetida:")
+            if (nombredls != "" && userdls != "" && contradls != "" && contrardls != "") {
+
+                if (contradls == contrardls) {
+
+                    Swal.fire(
+                        'BIENVENIDO!',
+                        'Ahora haces parte de YGATE!',
+                        'success'
+                    )
+                }
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Completa Todos Los Campos!',
+
+                })
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>

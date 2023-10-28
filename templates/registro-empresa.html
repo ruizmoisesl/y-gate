@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/empresa.css">
+    <title>Registro cliente</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    * {
+        margin: 0;
+        font-family: 'Nanum Gothic', sans-serif;
+    }
+
+    body {
+        background: black;
+    }
+
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.884);
+        height: 67px;
+        width: 100%;
+    }
+
+    .img {
+        display: flex;
+        height: 90%;
+        width: 50%;
+        margin: 10px;
+    }
+
+    .ygate {
+        margin-top: -55px;
+        margin-left: 65px;
+        font-size: 35px;
+        color: white;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+    }
+
+    .accesos {
+        display: flex;
+        margin-left: 55px;
+        margin-top: -30px;
+        justify-content: center;
+
+
+    }
+
+    .accesos-items {
+        margin: 10px;
+        color: white;
+        text-decoration: none;
+        text-align: right;
+        margin-top: -2px;
+    }
+
+    .inicio_suscripcion {
+        display: flex;
+        margin-left: 55px;
+        margin-top: -50px;
+        justify-content: right;
+    }
+
+    .inicio {
+        margin: 10px;
+        color: white;
+        text-decoration: none;
+        text-align: right;
+        font-size: 15px;
+        padding: 10px;
+        border-radius: 20px;
+    }
+
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: solid yellow 5px;
+        border-radius: 25px;
+        padding: 50px;
+    }
+
+    .regsitro-cliente {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 90px;
+        color: white;
+    }
+
+
+    button {
+        margin-top: 20px;
+        border-radius: 20px;
+        padding: 10px;
+        background-color: yellow;
+        border: none;
+    }
+
+    button:hover {
+        cursor: pointer;
+        width: 70px;
+        padding: 5px;
+    }
+
+    label {
+        margin-top: 10px;
+    }
+
+    h1 {
+        margin-top: -25px;
+    }
+
+    input {
+        background: none;
+        outline: none;
+        border: none;
+        border-radius: 2px;
+        border-bottom: 4px solid yellow;
+        color: white;
+        margin-top: 10px;
+        width: 100%;
+        text-align: center;
+    }
+</style>
+
+<header>
+    <a href="/" class="img"> <img src="{{logo_imag}}" alt="" srcset=""> </a>
+    <h1 class="ygate">Y'GATE</h1>
+
+    <div class="accesos">
+        <a href="/" class="accesos-items">INICIO</a>
+        <a href="" class="accesos-items">TIENDAS</a>
+        <a href="" class="accesos-items">PRODUCTOS</a>
+        <a href="" class="accesos-items">MERCADOS</a>
+
+    </div>
+
+    <div class="inicio_suscripcion">
+        <a href="/iniciar_sesion" class="inicio">INICIAR SESION</a>
+    </div>
+</header>
+
+<body>
+    <div class="regsitro-cliente">
+        <form action="rempresa" method="post" enctype="multipart/form-data">
+            <h1>EMPRESA</h1>
+            <label for="">NOMBRE DEL PROPIETARIO</label>
+            <input type="text" name="propietario" autocomplete="off">
+            <label for="">NOMBRE DE LA EMPRESA</label>
+            <input type="text" name="nombre_empresa">
+            <label for="">CORREO ELECTRONICO</label>
+            <input type="text" name="correo">
+            <label for="">LOGO DE LA EMPRESA</label>
+            <input type="file" name="logo_empresa">
+            <label for="">CONTRASEÑA</label>
+            <input type="password" name="contraseña">
+            <label for="">REPETIR CONTRASEÑA</label>
+            <input type="password" name="contraseñar">
+            <button type="submit">Registrate</button>
+        </form>
+
+    </div>
+</body>
+
+</html>

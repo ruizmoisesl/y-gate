@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{logo_image}}" type="image/x-icon">
+    <title>Y'GATE</title>
+</head>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+    body::-webkit-scrollbar {
+        display: none;
+    }
+
+    * {
+        margin: 0;
+        font-family: 'Nanum Gothic', sans-serif;
+
+    }
+
+    body {
+        box-sizing: border-box;
+        background: black;
+    }
+
+    header {
+            position: fixed;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.884);
+        height: 67px;
+        width: 100%;
+    }
+
+    .img{
+        display: flex;
+        height: 90%;
+        width: 50%;
+        margin: 10px;
+    }
+
+    .ygate {
+        margin-top: -55px;
+        margin-left: 65px;
+        font-size: 35px;
+        color: white;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+    }
+
+    .accesos {
+        display: flex;
+        margin-left: 55px;
+        margin-top: -30px;
+        justify-content: center;
+
+
+    }
+
+    .accesos-items {
+        margin: 10px;
+        color: white;
+        text-decoration: none;
+        text-align: right;
+        margin-top: -2px;
+    }
+
+    .inicio_suscripcion {
+        display: flex;
+        margin-left: 55px;
+        margin-top: -50px;
+        justify-content: right;
+    }
+
+    .inicio {
+        margin: 10px;
+        color: white;
+        text-decoration: none;
+        text-align: right;
+        font-size: 15px;
+        padding: 10px;
+        border-radius: 20px;
+    }
+
+    .suscripcion {
+        margin: 10px;
+        color: black;
+        text-decoration: none;
+        text-align: center;
+        font-size: 13px;
+        background-color: yellow;
+        padding: 10px;
+        border-radius: 20px;
+    }
+
+    .text-main {
+        margin-top: 100px;
+        display: flex;
+        flex-direction: column;
+        margin-left: 150px;
+        justify-content: left;
+        color: white;
+    }
+
+    .lograr {
+        font-size: 25px;
+    }
+
+    .emprender {
+        font-size: 95px;
+        width: 500px;
+    }
+
+    .registra {
+        display: flex;
+        font-size: 25px;
+        width: 500px;
+    }
+
+    .vender {
+        color: black;
+        font-size: 20px;
+        width: 200px;
+        background-color: yellow;
+        border-radius: 20px;
+        padding: 6px;
+        text-align: center;
+        margin-top: 20px;
+        text-decoration: none;
+    }
+
+
+
+    .Beneficios {
+        margin-top: 50px;
+        display: flex;
+        margin-left: 150px;
+        justify-content: left;
+        flex-direction: column;
+        color: white;
+    }
+
+    .descubrir {
+        font-size: 35px;
+        width: 1000px;
+        margin-top: 80px;
+        margin-bottom: 90px;
+        margin-left: -340px;
+        display: flex;
+        align-items: center;
+    }
+
+    .porcentaje {
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+    }
+
+    .descripcion {
+        display: flex;
+        width: 300px;
+    }
+
+    .cien {
+        font-size: 60px;
+        margin-bottom: 30px;
+    }
+
+
+    .tiendas {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: -30px;
+    }
+
+    .venticinco {
+        display: flex;
+        justify-content: left;
+        margin-left: -150px;
+        font-size: 60px;
+        margin-bottom: 30px;
+        margin-top: -160px;
+    }
+
+    .personas {
+        display: grid;
+        justify-content: right;
+        align-items: right;
+        flex-direction: column;
+        margin-top: -125px;
+        margin-right: 50px;
+    }
+
+    .kkk {
+        font-size: 60px;
+        margin-bottom: 30px;
+    }
+
+    .descripcion1 {
+        display: flex;
+        width: 250px;
+    }
+
+    .vender1 {
+        color: black;
+        font-size: 20px;
+        width: 250px;
+        background-color: yellow;
+        border-radius: 20px;
+        padding: 6px;
+        text-align: center;
+        margin-top: 100px;
+        text-decoration: none;
+    }
+
+    .comillas {
+        color: yellow;
+        font-size: 200px;
+        margin-top: 0px;
+        margin: 0;
+        margin-left: 200px;
+    }
+
+    /* CARRUSEL */
+
+    .imagen-principal {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 900px;
+    }
+
+    .galeria {
+        margin-top: 100px;
+        margin-left: 50px;
+        margin-right: 50px;
+        margin-bottom: 50px;
+        padding: 16px;
+    }
+
+    .listaImg img {
+        width: 100%;
+        width: 445px;
+        height: 445px;
+        margin-right: 10px;
+        display: block;
+    }
+
+    .listaImg {
+        border-radius: 10px;
+        display: flex;
+        overflow-y: auto;
+        margin-top: 10px;
+    }
+
+    .listaImg img:active {
+        width: 500px;
+        height: 500px;
+    }
+
+    .listaImg::-webkit-scrollbar {
+        width: 12px;
+    }
+
+    .listaImg::-webkit-scrollbar-thumb {
+        background-color: #888;
+        border-radius: 6px;
+    }
+
+    .listaImg::-webkit-scrollbar-thumb:hover {
+        background-color: yellow;
+    }
+</style>
+<header>
+    <a href="/" class="img"> <img src="{{ logo_image }}" alt="" srcset=""> </a>
+    <h1 class="ygate">Y'GATE</h1>
+
+    <div class="accesos">
+        <a href="/" class="accesos-items">INICIO</a>
+        <a href="" class="accesos-items">TIENDAS</a>
+        <a href="" class="accesos-items">PRODUCTOS</a>
+        <a href="" class="accesos-items">MERCADOS</a>
+
+    </div>
+
+    <div class="inicio_suscripcion">
+        <a href="/iniciar_sesion" class="inicio">INICIAR SESION</a>
+        <a href="/suscribirse" class="suscripcion">SUSCRIBIRSE</a>
+    </div>
+</header>
+
+<body>
+    <section class="text-main">
+        <div>
+            <label class="lograr">LO PODEMOS LOGRAR</label>
+            <h1 class="emprender">EMPRENDE DESDE 0</h1>
+            <label class="registra">REGISTRA TU EMPRENDIMIENTO Y POTENCIA TUS VENTAS CON POCA INVERSION</label>
+        </div>
+        <a href="/suscribirse" class="vender">VENDER</a>
+    </section>
+
+    <section class="Beneficios">
+        <div class="descubrir">
+            <label for="" class="comillas">“</label>
+            <label class="descubrir"></label>Descubre hoy el futuro de los servicos y las nuevas tecnologias que
+            potenciaran el crecimiento de tu empresa.</label>
+        </div>
+
+        <div class="contenido">
+            <div class="porcentaje">
+                <h1 class="cien">152%</h1>
+                <p class="descripcion">Y'GATE IMPULSARA TU NEGOCIO AL MENO UN 152%,AYUDANDOTE A CRECER COMO EMPRESA.</p>
+            </div>
+
+            <div class="tiendas">
+                <h1 class="venticinco">25K</h1>
+                <p class="descripcion">MAS DE 25K DE TIENDAS EN CADA CIUDAD DE COLOMBIA,AYUDANDO ASI A EL FLUJO DE
+                    CLIENTES.</p>
+            </div>
+
+            <div class="personas">
+                <h1 class="kkk">+500K</h1>
+                <p class="descripcion1">MAS DE 500K DE USUARIOS REGISTRADOS COMO COMPRADORES.</p>
+            </div>
+
+            <a href="suscribirse.html" class="vender1">REGISTRATE AHORA</a>
+
+        </div>
+    </section>
+
+    <section>
+        <main>
+            <div class="galeria">
+                <div class="listaImg">
+                    <img src="{{carrusel2}}">
+                    <img src="{{carrusel2}}">
+                    <img src="{{carrusel3}}">
+                    <img src="{{carrusel4}}">
+                    <img src="{{carrusel3}}">
+
+                </div>
+            </div>
+        </main>
+
+    </section>
+
+</body>
+
+</html>

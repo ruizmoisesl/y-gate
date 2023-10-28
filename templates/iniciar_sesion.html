@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Y'GATE</title>
+</head>
+
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #000000;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        .container {
+            height: 100vh;
+            padding: 1rem;
+        }
+        
+        .logo img {
+            display: block;
+            margin: auto;
+            width: 200px;
+        }
+        
+        .co {
+            text-align: center;
+            font-size: 1.2rem;
+            line-height: 28px;
+        }
+        
+        .form * {
+            display: block;
+        }
+        
+        .form {
+            max-width: 400px;
+            padding: 1rem;
+            margin: 1rem auto;
+            background-color: #000000;
+            border-radius: 7px;
+            box-shadow: 1px 1px 10px rgba(117, 116, 116, .219);
+        
+        }
+        
+        .form input[type="text"],
+        .form input[type="password"],
+        .form input[type="submit"] {
+            padding: 1rem;
+            width: 100%;
+            margin-bottom: 10px;
+            outline-color: #000000;
+            border: solid thin #000000;
+            border-radius: 6px;
+            color: #ffffff;
+            font-family: inherit;
+            font-size: 17px;
+            text-align: left;
+        }
+        
+        .form input::placeholder {
+            color: #ffffff;
+        }
+        
+        .form input[type="submit"] {
+            background-color: hsl(64, 89%, 52%);
+            text-align: center;
+            padding: .9rem .5rem;
+            font-weight: 600;
+            font-size: 20px;
+            color: #000000;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+        
+        .form span {
+            text-align: center;
+            font-size: 14px;
+            margin-top: 15px;
+        }
+        
+        .form span a {
+            color: #e3f124;
+            text-decoration: none;
+        }
+        
+        .border {
+            width: 90%;
+            height: 1px;
+            background-color: #000000;
+            margin: 20px auto;
+        }
+        
+        .form button {
+            width: 50%;
+            margin: auto;
+            background-color: #f5dc00;
+            padding: .9rem .3rem;
+            border-radius: 6px;
+            outline: none;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .form button a {
+            text-decoration: none;
+            color: #000000;
+            font-weight: 600;
+            font-size: 17px;
+        }
+        
+        .create-page {
+            text-align: center;
+            margin-top: 1.5rem;
+            font-size: 15px;
+        }
+        
+        .create-page > a {
+            color: #b0ee07;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
+        @media screen and (min-width:450px) {
+            .logo img {
+                width: 400px;
+            }
+        
+            .connect-friends {
+                font-size: 1.5rem;
+            }
+        
+            .form input::placeholder {
+                font-size: 1rem;
+            }
+        
+            .form input[type="submit"] {
+                font-size: 1.2rem;
+            }
+        }
+        
+        @media screen and (min-width:401px) {
+            .container {
+                max-width: 1400px;
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+            }
+        
+            .container-profile {
+                width: 40%;
+                margin-left: 100px;
+                transform: translateY(-50px);
+            }
+        
+            .logo img {
+                display: inline-block;
+
+                width: 1000px;
+                margin-left: -170px;
+            }
+        
+            .co {
+                text-align: left;
+                margin-left: 30px;
+                font-size: 27px;
+                color: aliceblue;
+                margin-top: -50px;
+            }
+        
+            .container-form {
+                width: 50%;
+            }
+        
+            .form {
+                width: 400px;
+            }
+            .input {
+                background-color: #1a1818;
+            }
+        }
+    </style>
+    <div class="container">
+        <div class="container-profile">
+            <span class="logo">
+                <img src="{{ logo_image }}" alt="YGATE"  >
+            </span>
+            <p class="co"></p>
+        </div>
+        <div class="container-form">
+            <form class="form" action="/sesion" method="post">
+                <input type="text" placeholder="Correo electronico o numero de telefono" class="input" name="correo">
+                <input type="password" placeholder="Contraseña" class="input" name="password">
+                <input type="submit" value="Iniciar Sesión">
+                <span><a href="#">¿Olvidaste tu contraseña?</a></span>
+                <span><a href="/sesion_empresa">¿Eres empresa?</a></span>
+                <div class="border"></div>
+                <button><a href="/suscribirse">Crear cuenta nueva</a></button>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>
