@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar Productos</title>
+</head>
+<style>
+    /* styles.css */
+.product-table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.product-table th, .product-table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.product-table th {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.product-table tr:nth-child(even) {
+    background-color: #f0f0f0;
+}
+
+.delete-link {
+    text-decoration: none;
+    color: #ff0000;
+    font-weight: bold;
+}
+
+</style>
+<body>
+    <h1>{{id}}</h1>
+    <table class="product-table">
+        <thead>
+            <tr>
+                <th>NOMBRE</th>
+                <th>TIPO</th>
+                <th>PRECIO</th>
+                <th>CANTIDAD</th>
+                <th>ACCIONES</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for producto in productos %}
+            <tr>
+                <td>{{ producto.1 }}</td>
+                <td>{{ producto.2 }}</td>
+                <td>{{ producto.3 }}</td>
+                <td>{{ producto.4 }}</td>
+                <td>
+                    <a href="/eliminar/{{producto.0}}" class="delete-link">ELIMINAR</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

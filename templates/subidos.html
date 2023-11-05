@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+        *{
+            font-family: 'Nanum Gothic', sans-serif;
+        }
+        .imgs {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .left-container {
+            flex: 1;
+            padding: 10px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); 
+            gap: 15px; 
+            border: 2.5px solid gray; 
+            border-radius:10px;
+            margin-left:10px;
+        }
+
+        h1, p {
+            color: aliceblue;
+            font-family: 'DM Serif Display', serif;
+        }
+
+        .img-container {
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .img-container img {
+            border-radius:20px;
+            width: 100%; 
+            height: 150px;
+        }
+
+        .img-container p {
+            margin: 0;
+            max-height: 60px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .img-container .nombre {
+            font-weight: bold;
+        }
+
+        .img-container .tiempo {
+            font-style: italic;
+        }
+
+        .img-container:hover {
+            transform: scale(1.1);
+        }
+
+        .img-container img:hover{
+            border:2px solid rgb(76, 52, 7);
+        }
+
+        .right-container {
+            
+            width: 20%;
+            padding: 10px;
+        }
+
+        .right-container img{
+            border-radius: 20px;
+        }
+
+        .descripcion{
+            justify-content: end;
+        }
+
+        body {
+            background: linear-gradient(to right, black, rgb(158, 103, 1));
+            background-size: cover;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>{{ nombre }}</h1>
+    </center>
+    <div class="imgs">
+        <div class="left-container">
+            {% for ruta, nombre , tiempo , precios in rutas_nombres %}
+                <div class="img-container">
+                    <img src="{{ ruta }}" alt="img">
+                    
+                    <p class="nombre">{{ nombre[0] }}</p>
+                    <div class="descripcion">
+                        <p class="tiempo" >{{ tiempo[0] }}</p> <p >${{precios}}</p>
+                    </div>
+                    
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="right-container">
+            {% for logos in logo %}
+            <img src="{{logos}}" alt="{{logos}}" width="280px" height="200px">
+            {% endfor %}
+            <h2>{{nombre}}    ⭐⭐⭐⭐</h2>
+            {% for direcciones in direccion %}
+            <h3>{{direcciones}}</h3>
+            {% endfor %}
+            <p>ENVIO GRATIS    15 MIN</p>
+            <p>ENVIO FLASH     10 MIN</p>
+            <img src="{{ url_for('static', filename='thumbnail.jpg') }}" alt="MAPA" style="margin-top: 10%;" width="280px" height="200px">
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

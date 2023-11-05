@@ -1,11 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Y'GATE | {{nombre_empresa}}</title>
+    <title>Y'GATE</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+
+        header img.ygate {
+            width: 100px;
+            height: auto;
+        }
+
+        header h1 {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centrar verticalmente el contenido */
+        }
+
+        /* Estilos para la tabla */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            font-family: 'Heebo', sans-serif;
+            text-align: center;
+            vertical-align: middle;
+            border: 1px solid #000;
+            padding: 10px;
+        }
+
+        thead {
+            background-color: #333;
+            color: white;
+        }
+
+        thead th {
+            font-weight: bold;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tbody tr:hover {
+            background-color: #ddd;
+        }
+
+        /* Estilos para los botones */
+        .button-container {
+            display: flex;
+            align-items: center;
+        }
+
+        button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        .add-product-link {
+            margin-left: 100px;
+            border: none;
+            border-radius: 2200px;
+            padding: 10px 20px;
+            cursor: pointer;
+            width: 20px;
+            text-decoration: none; 
+            font-weight: bold;
+            margin-right: 20px; 
+        }
+
+        .crud{
+            margin-top: -30px;
+            margin-left: 1000px;
+        }
+        .crud-icon{
+            margin: 10px;
+        }
+        
+        
+    </style>
 </head>
+
 <body>
-    
+    <header>
+        <img src="{{ url_for('static', filename='ygate.png') }}" alt="Logo Y'GATE" class="ygate" height="100px" width="100px">
+        <h1>Y'GATE</h1>
+        {% for rutas in ruta %}
+        <img src="{{rutas}}" alt="{{ruta}}" height="50px" width="50px" >
+        {% endfor %}
+    </header>
+
+    <section id="seccion1">
+        <div class="button-container">
+            <button onclick="mostrarTabla('tabla')">PEDIDOS</button>
+            <button onclick="mostrarTabla('tabla1')">CAJA</button>
+            <button onclick="mostrarTabla('tabla2')">PRODUCTOS</button>
+            
+        </div>
+        
+        <div class="crud">
+            <a href="/add_producto" class="crud-icon"><img src="{{ url_for('static', filename='boton-mas.png') }}" alt="AGREGAR PRODUCTO" width="30px"></a>
+            <a href="/editar_producto" class="crud-icon" ><img src="{{ url_for('static', filename='editar.png') }}" alt="" width="30px"></a>
+            <a href="/eliminar" class="crud-icon"><img src="{{ url_for('static', filename='borrar.png') }}" alt="" width="30px"></a></a>
+        </div>
+
+        <table id="tabla" style="display: none;">
+            <thead>
+                <tr>
+                    <th>tabla</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <table id="tabla1" style="display: none;">
+            <thead>
+                <tr>
+                    <th>Título de Caja</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <table id="tabla2" style="display: none;">
+            <thead>
+                <tr>
+                    <th>NOMBRE</th>
+                    <th>TIPO</th>
+                    <th>PRECIO</th>
+                    <th>CANTIDAD</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for producto in productos %}
+                <tr>
+                    <td>{{ producto.1 }}</td>
+                    <td>{{ producto.2 }}</td>
+                    <td>{{ producto.3 }}</td>
+                    <td>{{ producto.4 }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+
+    <script>
+        function mostrarTabla(tablaId) {
+            var tablas = document.querySelectorAll('table');
+            tablas.forEach(function(tabla) {
+                tabla.style.display = 'none';
+            });
+            document.getElementById(tablaId).style.display = 'table';
+        }
+    </script>
 </body>
+
 </html>

@@ -1,20 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
-    <link rel="stylesheet" type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"/>
     <style>
         .icono-menu {
             position: absolute;
             top: 20px;
             left: 20px;
             z-index: 30;
-
+    
         }
 
         .icono-menu img {
@@ -52,11 +49,9 @@
             left: 0;
             transition: all .5s ease;
         }
-
         .active .carousel {
-            transform: scale(0.6);
+            transform: scale(0.6); 
         }
-
         body {
             background: linear-gradient(to right, black, rgb(158, 103, 1));
             background-size: cover;
@@ -67,9 +62,9 @@
         }
 
         .carousel-container {
-            width: 98%;
-            max-width: 2000px;
-            margin: 0 auto;
+            width: 98%; 
+            max-width: 2000px; 
+            margin: 0 auto; 
             margin-top: 40px;
         }
 
@@ -83,7 +78,7 @@
 
         .carousel img {
             width: 150px;
-            height: 150px;
+            height: 150px; 
             margin-right: 10px;
             transition: transform 0.3s ease;
             cursor: pointer;
@@ -142,7 +137,6 @@
             margin-left: 200px;
             margin-top: 30px;
         }
-
         .cont-menu {
             background-color: rgb(156, 117, 8);
             box-shadow: 2px 0px 5px 2px rgba(104, 97, 3, 0.575);
@@ -152,29 +146,28 @@
             top: 0;
             left: 0;
             transition: all .5s ease;
-            z-index: 20;
+            z-index: 20; 
         }
-
-        .imgs {
-            width: 200px;
-            text-align: left;
-            margin-right: 10px;
+        
+        .imgs{
+            width: 200px; 
+            text-align: left; 
+            margin-right: 10px; 
         }
-
-
+        
+        
         .imgs img {
-            width: 250px;
+            width: 250px; 
             height: 150px;
             object-fit: cover;
         }
 
 
         .imgs p {
-            margin: 10px 0;
-            font-weight: bold;
-            color: white;
+        margin: 10px 0;
+        font-weight: bold;
+        color: white;
         }
-
         .carousel-ade {
             left: 88%;
             color: aliceblue;
@@ -186,168 +179,176 @@
         }
 
 
-
-
+        
+       
         .car2 img {
-            width: 80px;
-            height: 80px;
-            object-fit: cover;
+            width: 80px; 
+            height: 80px; 
+            object-fit: cover; 
         }
-
-
+        
+        
         .carousel2-container {
-            width: auto;
+            width: auto; 
             max-width: 1200px;
-            margin: 0 auto;
+            margin: 0 auto; 
             margin-top: 30px;
         }
-
         .carousel-ade,
         .carousel-atras {
             margin-top: -30px;
         }
-
         h4 {
             margin-top: 60px;
             margin-left: 200px;
         }
+        .title{
+            z-index: 50;
+        }
     </style>
-    <title>Y'GATE</title>
+    <title class="title">Y'GATE</title>
 </head>
-
 <body>
-    <div>
-        <h1>Y'GATE</h1>
-    </div>
-    <div class="buscador">
+<div>
+    <h1>Y'GATE</h1>
+    <form action="/cerrar_sesion" method="post">
+        <a href="/iniciar_sesion">CERAR SESION</a>
+    </form>
+</div>
+<div class="buscador">
+    <form action="/buscar" method="post">
         <input type="text" placeholder="BUSCAR"
-            style=" border-bottom: 1px solid black; background: transparent; width: 60%; outline: none; font-size: 16px; color: black; padding: 5px 0; margin-bottom: 10px; border-radius: 15px; border-left: 1px solid black; border-right: 1px solid black;">
-    </div>
-    <h2 style="color: aliceblue;">Productos Populares</h2>
-    <div class="icono-menu">
-        <img src="{{menu}}" id="icono-menu">
-    </div>
-    <div class="cont-menu" id="menu">
-        <ul>
-            <li>iniciar sesión</li>
-            <li>registrarse</li>
-        </ul>
-    </div>
+        style=" border-bottom: 1px solid black; background: transparent; width: 60%; outline: none; font-size: 16px; color: black; padding: 5px 0; margin-bottom: 10px; border-radius: 15px; border-left: 1px solid black; border-right: 1px solid black;" name="buscado">
+        <input type="submit">
+    </form>
+</div>
+<h2 style="color: aliceblue;">Productos Populares</h2>
+<div class="icono-menu">
+    <img src="{{ url_for('static', filename='menu2.png') }}" id="icono-menu">
+</div>
+<div class="cont-menu" id="menu">
+    <ul>
+        <li>Y'GATE</li>
+        <li>registrarse</li>
+    </ul>
+</div>
 
-    <div class="carousel-prev">🠐</div>
-    <div class="carousel-next">🠒</div>
-    <div class="carousel-container">
-        <div class="carousel">
-            <div class="imgs">
-                <img src="{{postre}}" alt="Imagen 1">
-                <p>POSTRE</p>
-                <p>10 MIN ⭐⭐⭐⭐</p>
-            </div>
-            <div class="imgs">
-                <img src="{{pan}}" alt="Imagen 2">
-                <p>PAN</p>
-                <p>5 MIN ⭐⭐⭐⭐⭐</p>
-            </div>
-            <div class="imgs">
-                <img src="{{hambur}}" alt="Imagen 3">
-                <p>HAMBURGUESA</p>
-                <P>15 MIN ⭐⭐⭐⭐⭐</P>
-            </div>
-            <div class="imgs">
-                <img src="{{grani}}" alt="Imagen 4">
-                <p>GRANIZADO</p>
-                <P>10 MIN ⭐⭐⭐⭐</P>
-            </div>
-            <div class="imgs">
-                <img src="{{gatos}}" alt="">
-                <p>MUEBLE PARA GATOS</p>
-                <P>20 MIN ⭐⭐⭐⭐⭐</P>
-            </div>
-            <div class="imgs">
-                <img src="{{ropa}}" alt="">
-                <p>ROPA</p>
-                <p>30 MIN ⭐⭐⭐⭐</p>
-            </div>
+<div class="carousel-prev">🠐</div>
+<div class="carousel-next">🠒</div>
+<div class="carousel-container">
+    <div class="carousel">
+        <div class="imgs">
+            <img src="{{ url_for('static', filename='postre.jpg') }}" alt="Imagen 1">
+            <p>POSTRE</p>
+            <p>10 MIN    ⭐⭐⭐⭐</p>
+        </div>
+        <div class="imgs">
+            <img src="{{ url_for('static', filename='pan.jpg') }}" alt="Imagen 2">
+            <p>PAN</p>
+            <p>5 MIN   ⭐⭐⭐⭐⭐</p>
+        </div>
+        <div class="imgs">
+            <img src="{{ url_for('static', filename='hambur.jpg') }}" alt="Imagen 3">
+            <p>HAMBURGUESA</p>
+            <P>15 MIN   ⭐⭐⭐⭐⭐</P>
+        </div>
+        <div class="imgs">
+            <img src="{{ url_for('static', filename='grani.jpg') }}" alt="Imagen 4">
+            <p>GRANIZADO</p>
+            <P>10 MIN   ⭐⭐⭐⭐</P>
+        </div>
+        <div class="imgs">
+            <img src="{{ url_for('static', filename='gatos.jpeg') }}" alt="">
+            <p>MUEBLE PARA GATOS</p>
+            <P>20 MIN   ⭐⭐⭐⭐⭐</P>
+        </div>
+        <div class="imgs">
+            <img src="{{ url_for('static', filename='ropa.png') }}" alt="">
+            <p>ROPA</p>
+            <p>30 MIN   ⭐⭐⭐⭐</p>
         </div>
     </div>
-    <div>
+</div>
+<div>
 
-        <h4 class="mercados">SUPER MERCADOS</h4>
-    </div>
-    <div class="carousel-ade">🠐</div>
-    <div class="carousel-atras">🠒</div>
-    <div class="carousel2-container">
-        <div class="carousel2">
-            <div class="car2">
-                <img src="{{exito}}" alt="exito">
-            </div>
-            <div class="car2">
-                <img src="{{caru}}" alt="">
-            </div>
-            <div class="car2">
-                <img src="{{colanta}}" alt="">
-            </div>
-            <div class="car2">
-                <img src="{{d1}}" alt="">
-            </div>
-            <div class="car2">
-                <img src="{{olimpica}}" alt="">
-            </div>
-            <div class="car2">
-                <img src="{{jumbo}}" alt="">
-            </div>
-            <div class="car2">
-                <img src="{{ara}}" alt="">
-            </div>
-            <div class="car2">
-                <img src="{{user}}" alt="">
-            </div>
+    <h4 class="mercados" style="color: aliceblue;">SUPER MERCADOS</h4>
+</div>
+<div class="carousel-ade">🠐</div>
+<div class="carousel-atras">🠒</div>
+<div class="carousel2-container">
+    <div class="carousel2">
+        <div class="car2">
+            <img src="{{ url_for('static', filename='exito.png') }}" alt="exito">
+        </div>
+        <div class="car2">
+            <img src="{{ url_for('static', filename='caru.png') }}" alt="">
+        </div>
+        <div class="car2">
+            <img src="{{ url_for('static', filename='colanta.jpg') }}" alt="">
+        </div>
+        <div class="car2">
+            <img src="{{ url_for('static', filename='d1.png') }}" alt="">
+        </div>
+        <div class="car2">
+            <img src="{{ url_for('static', filename='olimpica.png') }}" alt="">
+        </div>
+        <div class="car2">
+            <img src="{{ url_for('static', filename='jumbo2.png') }}" alt="">
+        </div>
+        <div class="car2">
+            <img src="{{ url_for('static', filename='ara.png') }}" alt="">
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <script>
-        let estadoMenu = "desactivado";
-        const iconoMenu = document.querySelector('#icono-menu');
-        const menu = document.querySelector('#menu');
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script>
+    let estadoMenu = "desactivado";
 
-        iconoMenu.addEventListener('click', (e) => {
-            if (estadoMenu === "desactivado") {
-                estadoMenu = "activado";
-                iconoMenu.setAttribute('src', '{{ menu }}');
-            } else {
-                estadoMenu = "desactivado";
-                iconoMenu.setAttribute('src', '{{menu}}');
-            }
+const iconoMenu = document.querySelector('#icono-menu');
+const menu = document.querySelector('#menu');
 
-            menu.classList.toggle('active');
-            document.body.classList.toggle('menu-open');
+iconoMenu.addEventListener('click', (e) => {
+    if (estadoMenu === "desactivado") {
+        estadoMenu = "activado";
+    } else {
+        estadoMenu = "desactivado";
+    }
+
+
+    menu.classList.toggle('active');
+    document.body.classList.toggle('menu-open');
+
+    const rutaActual = e.target.getAttribute('src');
+
+    if (rutaActual == '{{ url_for('static', filename='menu2.png') }}') {
+        e.target.setAttribute('src', '{{ url_for('static', filename='menu2.png') }}');
+    } else {
+        e.target.setAttribute('src', '{{ url_for('static', filename='menu2.png') }}');
+    }
+});
+
+    $(document).ready(function () {
+        $('.carousel').slick({
+            slidesToShow: 5,
+            slidesToScroll: 1,
+            autoplay: false,
+            prevArrow: $('.carousel-prev'), 
+            nextArrow: $('.carousel-next'),
         });
-
-
-        $(document).ready(function () {
-            $('.carousel').slick({
-                slidesToShow: 5,
-                slidesToScroll: 1,
-                autoplay: false,
-                prevArrow: $('.carousel-prev'),
-                nextArrow: $('.carousel-next'),
-            });
+    });
+    $(document).ready(function () {
+        $('.carousel2').slick({
+            slidesToShow: 7,
+            slidesToScroll: 1,
+            autoplay: false,
+            prevArrow: $('.carousel-ade'), 
+            nextArrow: $('.carousel-atras'),
         });
-        $(document).ready(function () {
-            $('.carousel2').slick({
-                slidesToShow: 7,
-                slidesToScroll: 1,
-                autoplay: false,
-                prevArrow: $('.carousel-ade'),
-                nextArrow: $('.carousel-atras'),
-            });
-        });
-    </script>
+    });
+</script>
 </body>
-
 </html>

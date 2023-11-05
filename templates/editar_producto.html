@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Productos</title>
+</head>
+<style>
+    /* Estilos generales */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+    }
+
+    /* Estilos para la tabla */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    th,
+    td {
+        font-family: 'Heebo', sans-serif;
+        text-align: center;
+        vertical-align: middle;
+        border: 1px solid #000;
+        padding: 10px;
+    }
+
+    thead {
+        background-color: #333;
+        color: white;
+    }
+
+    thead th {
+        font-weight: bold;
+    }
+
+    tbody tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    tbody tr:hover {
+        background-color: #ddd;
+    }
+
+    /* Estilos para los enlaces de editar */
+    a {
+        text-decoration: none;
+        background-color: #007bff;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+
+    a:hover {
+        background-color: #0056b3;
+    }
+
+    header {
+        background-color: #333;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+    }
+    
+    .logo img {
+        width: 50px; /* Ajusta el tamaño del logo según tus necesidades */
+        height: 50px;
+    }
+    
+    .title h1 {
+        font-size: 24px; /* Ajusta el tamaño de fuente según tus preferencias */
+        margin: 0;
+    }
+    
+    .menu ul {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .menu li {
+        display: inline;
+        margin-right: 20px;
+    }
+    
+    .menu a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        transition: color 0.3s;
+    }
+    
+    .menu a:hover {
+        color: #007bff; /* Cambia el color al pasar el ratón por encima */
+    }
+</style>
+<header>
+    <div class="logo">
+        {% for rutas in ruta %}
+        <img src="{{rutas}}" alt="{{ruta}}" >
+        {% endfor %}
+    </div>
+    <div class="title">
+        <h1>{{company_name}}</h1>
+    </div>
+    <div class="menu">
+        <nav>
+            <ul>
+                <li><a href="/interfaz_empresa">Inicio</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<body>
+
+    <h1 style="text-align: center;">
+        ¿QUÉ PRODUCTO VAS A EDITAR?
+    </h1>
+    <table id="tabla">
+        <thead>
+            <tr>
+                <th>NOMBRE</th>
+                <th>TIPO</th>
+                <th>PRECIO</th>
+                <th>CANTIDAD</th>
+                <th>ACCIONES</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for producto in productos %}
+            <tr>
+                <td>{{ producto.1 }}</td>
+                <td>{{ producto.2 }}</td>
+                <td>{{ producto.3 }}</td>
+                <td>{{ producto.4 }}</td>
+                <td><a href="/editar/{{ producto.0 }}">EDITAR</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+
+</html>
